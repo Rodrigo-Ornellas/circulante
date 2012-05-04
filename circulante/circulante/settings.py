@@ -122,7 +122,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
-    'circulante.catalogo',    
+    'circulante.catalogo',
+    'emprestimo',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -153,6 +154,11 @@ LOGGING = {
         },
     }
 }
+
+# configuracoes especificas do Circulante
+AUTH_PROFILE_MODULE = 'emprestimo.Participante'
+
+# separando as senhas num arquivo separado do SETTINGs
 import os
 PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
 execfile(os.path.join(PROJECT_PATH,'settings_local.include'))
